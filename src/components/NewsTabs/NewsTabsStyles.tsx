@@ -1,10 +1,13 @@
 import Link from "next/link";
 import styled from 'styled-components';
+import { ScreenBP } from "../../lib/ScreenBP";
 
 export const News = styled.div`
-  padding-top: 30px;
   margin: auto;
   max-width: 1000px;
+  @media screen and (min-width: ${ScreenBP.md}px) {
+    padding-top: 30px;
+  }
 `;
 export const Tabs = styled.div`
   background-color: #f4f4ee;
