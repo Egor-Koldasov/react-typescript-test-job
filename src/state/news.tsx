@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ukNewsUrl, footballUrl, travelUrl } from "../lib/urls";
 
-type NewsItem = {
+export type NewsItem = {
   id: string
   webTitle: string
   webUrl: string
 }
 
-type NewsList = {
+export type NewsList = {
   response: {
     startIndex: number
     results: NewsItem[]
@@ -19,10 +20,6 @@ export type NewsState = {
   football: NewsList
   travel: NewsList
 }
-
-export const ukNewsUrl = 'https://content.guardianapis.com/search?section=uk-news&api-key=test';
-export const footballUrl = 'https://content.guardianapis.com/search?section=football&api-key=test';
-export const travelUrl = 'https://content.guardianapis.com/search?section=travel&api-key=test';
 
 export const fetchSection = async (url: string) => {
   const res = await axios.get<NewsList>(url);

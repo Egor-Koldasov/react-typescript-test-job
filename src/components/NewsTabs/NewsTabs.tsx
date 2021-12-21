@@ -15,7 +15,7 @@ const tabIds: TabId[] = Object.keys(tabs) as TabId[];
 
 type NewsTabsProps = {}
 
-export default function (props: NewsTabsProps) {
+export default function NewsTabs(props: NewsTabsProps) {
   const [activeTabIndex, setActiveTabIndex] = useState<TabId>('ukNews');
   const news = useNews();
   return (
